@@ -14,7 +14,7 @@ public class Entry {
     inst.set(y,m-1,d,h,min,s);
     dateAndTime = inst;
     distance = dist;
-    uniqueIdentifier = n + dateAndTime.toString();
+    uniqueIdentifier = n + d + m + y;
   } //constructor
   
   public String getName () {
