@@ -7,14 +7,16 @@ public class Entry {
   private Calendar dateAndTime;
   private float distance;
   private String uniqueIdentifier;
+  private EnumExerciseType exerciseType;
   
-  public Entry (String n, int d, int m, int y, int h, int min, int s, float dist) {
+  public Entry (EnumExerciseType exType, String n, int d, int m, int y, int h, int min, int s, float dist) {
     name = n;
     Calendar inst = Calendar.getInstance();
     inst.set(y,m-1,d,h,min,s);
     dateAndTime = inst;
     distance = dist;
     uniqueIdentifier = n + d + m + y;
+    exerciseType = exType;
   } //constructor
   
   public String getName () {
@@ -51,11 +53,32 @@ public class Entry {
   } //getYear
 
   public String getEntry () {
-   String result = getName()+" ran " + getDistance() + " km in "
+   String result = getName()+" " + appropriatePastTenseExerciseVerb() + " " + getDistance() + " km in "
              +getHour()+":"+getMin()+":"+ getSec() + " on "
              +getDay()+"/"+getMonth()+"/"+getYear()+"\n";
    return result;
   } //getEntry
+
+  private String appropriatePastTenseExerciseVerb()
+  {
+    String result;
+
+    if (exerciseType == EnumExerciseType.Cycling)
+    {
+      result = "cycled";
+    }
+    else if (exerciseType == EnumExerciseType.Running)
+    {
+      result = "ran";
+    }
+    else
+    {
+      result = "swam";
+    }
+
+    return result;
+  } //appropriateExerciseVerb
+
 
   public String getUniqueIdentifier() { return uniqueIdentifier; }  //getUniqueIdentifier
 

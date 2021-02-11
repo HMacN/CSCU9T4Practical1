@@ -7,7 +7,7 @@ public class CycleEntry extends Entry
 
     public CycleEntry(String n, int d, int m, int y, int h, int min, int s, float dist, String surfaceType, String routeDifficulty)
     {
-        super (n, d, m, y, h, min, s, dist);
+        super (EnumExerciseType.Cycling, n, d, m, y, h, min, s, dist);
 
         this.routeDifficulty = routeDifficulty;
         this.surfaceType = surfaceType;

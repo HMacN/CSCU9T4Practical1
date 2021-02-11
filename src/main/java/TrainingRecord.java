@@ -83,7 +83,14 @@ public class TrainingRecord {
                 Entry current = iter.next();
                 if (current.getDay()==Integer.parseInt(day) && current.getMonth()==Integer.parseInt(month) && current.getYear()==Integer.parseInt(year))     //Check if entry matches search terms
                 {
-                    result = current.getEntry() + "\r";  //Add first found matching entry
+                    if (result == stringToReturnWhenNoEntriesFound) //Check if any results have been added to the output string already.
+                    {
+                        result = current.getEntry();  //Add first found matching entry.
+                    }
+                    else
+                    {
+                        result += current.getEntry();    //Add subsequent entries.
+                    }
                 }
             }
         }
@@ -96,6 +103,7 @@ public class TrainingRecord {
        return tr.size();
    }
    // Clear all entries
+
    public void clearAllEntries(){
        tr.clear();
    }

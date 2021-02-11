@@ -42,7 +42,7 @@ public class SwimEntryTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        Entry instance = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"outdoors");
+        Entry instance = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3, "Outdoors");
         String expResult = "Alice";
         String result = instance.getName();
         assertEquals(expResult, result);
