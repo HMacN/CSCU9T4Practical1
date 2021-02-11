@@ -58,7 +58,7 @@ public class TrainingRecord {
            while (iter.hasNext())
            {
                Entry current = iter.next();
-               if (current.getDay() == Integer.getInteger(day) && current.getMonth() == Integer.getInteger(month) && current.getYear() == Integer.getInteger(year))     //Check if entry matches search terms
+               if (current.getDay() == Integer.parseInt(day) && current.getMonth() == Integer.parseInt(month) && current.getYear() == Integer.parseInt(year))     //Check if entry matches search terms
                {
                    result = current.getEntry();  //Add first found matching entry
                }
@@ -81,16 +81,9 @@ public class TrainingRecord {
             while (iter.hasNext())
             {
                 Entry current = iter.next();
-                if (current.getDay()==Integer.getInteger(day) && current.getMonth()==Integer.getInteger(month) && current.getYear()==Integer.getInteger(year))     //Check if entry matches search terms
+                if (current.getDay()==Integer.parseInt(day) && current.getMonth()==Integer.parseInt(month) && current.getYear()==Integer.parseInt(year))     //Check if entry matches search terms
                 {
-                    if (result.equals(stringToReturnWhenNoEntriesFound))  //Check if no result has yet been found
-                    {
-                        result = current.getEntry();  //Add first found matching entry
-                    }
-                    else
-                    {
-                        result += ("\r" + current.getEntry());  //Add any subsequent matching entries
-                    }
+                    result = current.getEntry() + "\r";  //Add first found matching entry
                 }
             }
         }
