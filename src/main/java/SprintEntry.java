@@ -6,6 +6,7 @@ public class SprintEntry extends Entry
 {
     private int repetitions;
     private int recovery;
+    private int metersRun;
 
     public SprintEntry(String n, int d, int m, int y, int h, int min, int s, float dist, int repetitions, int recovery)
     {
@@ -13,6 +14,7 @@ public class SprintEntry extends Entry
 
         this.repetitions = repetitions;
         this.recovery = recovery;
+        this.metersRun = (int) (distance*1000);
     } //Constructor
 
     public int getRepetitions ()
@@ -25,5 +27,14 @@ public class SprintEntry extends Entry
         return recovery;
     } //getRecovery
 
+    @Override
+    public String getEntry()
+    {
+        String result = getName() + " sprinted " + repetitions + "x" + metersRun + "m in "
+                +getHour()+":"+getMin()+":"+ getSec()
+                + " with " + recovery + " minutes recovery on "
+                +getDay()+"/"+getMonth()+"/"+getYear()+".\n";
+        return result;
+    } //getEntry
 
 }

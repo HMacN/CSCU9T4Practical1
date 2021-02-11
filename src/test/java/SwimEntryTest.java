@@ -143,7 +143,7 @@ public class SwimEntryTest {
         String resultA = ((SwimEntry) instanceA).getWhere();
         assertEquals(expResultA, resultA);
         
-        Entry instanceB = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"pool");
+        Entry instanceB = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"in a pool");
         String expResultB = "in a pool";
         String resultB = ((SwimEntry) instanceB).getWhere();
         assertEquals(expResultB, resultB);
@@ -155,7 +155,7 @@ public class SwimEntryTest {
     public void testGetEntry() {
         System.out.println("getEntry");
         Entry instance = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"outdoors");
-        String expResult = "Alice swam 3.0 km outdoors in 0:16:7 on 1/2/2003\n";
+        String expResult = "Alice swam 3.0km outdoors in 0:16:7 on 1/2/2003.\n";
         String result = instance.getEntry();
         assertEquals(expResult, result);
     }

@@ -19,4 +19,14 @@ public class CycleEntry extends Entry
     } //getTerrain
 
     public String getRouteDifficulty () { return routeDifficulty; } //getRouteDifficulty
+
+    @Override
+    public String getEntry()
+    {
+        String result = getName() + " cycled " + distance + "km in "
+                +getHour()+":"+getMin()+":"+ getSec()
+                + " on " +getDay()+"/"+getMonth()+"/"+getYear()
+                + " on " + surfaceType + " at " + routeDifficulty + " tempo.\n";
+        return result;
+    } //getEntry
 }

@@ -115,11 +115,11 @@ public class TrainingRecordTest {
     public void testLookupEntries() {
         System.out.println("lookupEntries");
         String expectResultsNone = "No entries found.";
-        String expectResults = "Alice ran 3.0 km in 0:16:7 on 1/2/2003\n" + 
-                                "Bob swam 3.0 km in 0:14:15 on 1/2/2003\n";
+        String expectResults = "Alice sprinted 5x3000m in 0:16:7 with 5 minutes recovery on 1/2/2003.\n" +
+                                "Bob swam 3.0km outdoors in 0:14:15 on 1/2/2003.\n";
         TrainingRecord instance = new TrainingRecord();
         instance.addEntry(EnumExerciseType.Running, "Alice", "1", "2", "2003", "0", "16", "7", "3", "", "", "5", "5", "");
-        instance.addEntry(EnumExerciseType.Swimming, "Bob", "1", "2", "2003", "0", "14", "15", "3", "", "", "", "", "Pool");
+        instance.addEntry(EnumExerciseType.Swimming, "Bob", "1", "2", "2003", "0", "14", "15", "3", "", "", "", "", "outdoors");
        //fail("This method cannot be tested as it does not exist yet");
         String d = "1";
         String m = "2";
