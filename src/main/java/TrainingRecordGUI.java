@@ -23,9 +23,12 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labmm = new JLabel(" Mins:");
     private JLabel labs = new JLabel(" Secs:");
     private JLabel labdist = new JLabel(" Distance (km):");
+
     private JButton addR = new JButton("Add");
     private JButton lookUpByDate = new JButton("Look Up");
     private JButton findAllByDate = new JButton("Find All By Date");
+    private JButton deleteEntryButton = new JButton("Delete Specified Entry");
+
     private JComboBox typeOfExerciseDropDown = new JComboBox(EnumExerciseType.values());
 
     private JLabel cyclingSurfaceLabel = new JLabel(" Surface type: ");
@@ -119,6 +122,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(findAllByDate);
         findAllByDate.addActionListener(this);
         findAllByDate.setEnabled(false);
+
+        add(deleteEntryButton);
+        deleteEntryButton.addActionListener(this);
+        deleteEntryButton.setEnabled(false);
 
         add(outputArea);
         outputArea.setEditable(false);
