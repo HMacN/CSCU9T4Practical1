@@ -77,7 +77,7 @@ public class TrainingRecordTest {
         instance.addEntry(EnumExerciseType.Cycling, "Alice", "1", "2", "2003", "0", "16", "7", "3", "Track", "Easy", "", "", "");
         instance.addEntry(EnumExerciseType.Swimming, "Bob", "1", "2", "2003", "0", "14", "15", "3", "", "", "", "", "Pool");
         instance.addEntry(EnumExerciseType.Running, "Claire", "7", "3", "2010", "0", "26", "20", "7", "", "", "9", "20", "");
-        instance.addEntry(EnumExerciseType.Running, "Claire", "11", "23", "2010", "0", "24", "55", "7", "", "", "9", "20", "");
+        instance.addEntry(EnumExerciseType.Running, "Claire", "23", "11", "2010", "0", "24", "55", "7", "", "", "9", "20", "");
         String d = "7";
         String m = "3";
         String y = "2010";
@@ -102,7 +102,7 @@ public class TrainingRecordTest {
         assertEquals(instance.getNumberOfEntries(),2);
         instance.addEntry(EnumExerciseType.Running, "Claire", "7", "3", "2010", "0", "26", "20", "7", "", "", "9", "20", "");
         assertEquals(instance.getNumberOfEntries(),3);
-        instance.addEntry(EnumExerciseType.Running, "Claire", "11", "23", "2010", "0", "24", "55", "7", "", "", "9", "20", "");
+        instance.addEntry(EnumExerciseType.Running, "Claire", "23", "11", "2010", "0", "24", "55", "7", "", "", "9", "20", "");
         assertEquals(instance.getNumberOfEntries(),4);
     }
     

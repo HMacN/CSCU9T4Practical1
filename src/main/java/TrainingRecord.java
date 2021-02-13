@@ -18,28 +18,31 @@ public class TrainingRecord {
    {
        String result;
        boolean isThisADuplicateEntry = false;
-       result = "";
+       result = inputChecker.isInputSafe(typeOfExerciseSelected, name, day, month, year, hour, minute, second, distance, cyclingSurface, cyclingRouteDifficulty, sprintingRepetitions, sprintingRecovery, swimmingLocation);
 
-       Entry newEntry = createAppropriateEntryType(typeOfExerciseSelected, name, day, month, year, hour, minute, second, distance, cyclingSurface, cyclingRouteDifficulty, sprintingRepetitions, sprintingRecovery, swimmingLocation);
-
-       String uniqueIdentifierOfNewEntry = newEntry.getUniqueIdentifier();
-
-       for (Entry e : this.tr)  //Go through all existing entries and check if they match the new entry.
+       if (result.equals(""))
        {
-           if (e.getUniqueIdentifier().equals(uniqueIdentifierOfNewEntry))
+           Entry newEntry = createAppropriateEntryType(typeOfExerciseSelected, name, day, month, year, hour, minute, second, distance, cyclingSurface, cyclingRouteDifficulty, sprintingRepetitions, sprintingRecovery, swimmingLocation);
+
+           String uniqueIdentifierOfNewEntry = newEntry.getUniqueIdentifier();
+
+           for (Entry e : this.tr)  //Go through all existing entries and check if they match the new entry.
            {
-               isThisADuplicateEntry = true;
+               if (e.getUniqueIdentifier().equals(uniqueIdentifierOfNewEntry))
+               {
+                   isThisADuplicateEntry = true;
+               }
            }
-       }
 
-       if (isThisADuplicateEntry)
-       {
-           result = "Duplicate entries are not permitted.\n";
-       }
-       else
-       {
-           tr.add(newEntry);
-           result = "Record added\n";
+           if (isThisADuplicateEntry)
+           {
+               result = "Duplicate entries are not permitted.\n";
+           }
+           else
+           {
+               tr.add(newEntry);
+               result = "Record added\n";
+           }
        }
 
        return result;

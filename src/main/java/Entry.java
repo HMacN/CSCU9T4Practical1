@@ -18,6 +18,11 @@ public abstract class Entry {
     uniqueIdentifier = n + d + m + y;
     exerciseType = exType;
   } //constructor
+
+  public EnumExerciseType getExerciseType()
+  {
+    return exerciseType;
+  } //getExerciseType
   
   public String getName () {
     return name;

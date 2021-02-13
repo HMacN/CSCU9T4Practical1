@@ -229,6 +229,13 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
     // Fills the input fields on the display for testing purposes only
     public void fillDisplay(Entry ent) {
+
+        EnumExerciseType entityExerciseType = ent.getExerciseType();
+        CycleEntry cyclingEntity;
+        SprintEntry sprintingEntity;
+        SwimEntry swimmingEntity;
+        typeOfExerciseDropDown.setSelectedItem(entityExerciseType);
+
         name.setText(ent.getName());
         day.setText(String.valueOf(ent.getDay()));
         month.setText(String.valueOf(ent.getMonth()));
@@ -237,6 +244,27 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         mins.setText(String.valueOf(ent.getMin()));
         secs.setText(String.valueOf(ent.getSec()));
         dist.setText(String.valueOf(ent.getDistance()));
+
+        if (entityExerciseType == EnumExerciseType.Cycling)
+        {
+            cyclingEntity = (CycleEntry) ent;   //Cast to cycling entry to call appropriate getters.
+
+            cyclingRouteDifficulty.setText(cyclingEntity.getRouteDifficulty());
+            cyclingSurfaceType.setText(cyclingEntity.getTerrain());
+        }
+        else if (entityExerciseType == EnumExerciseType.Running)
+        {
+            sprintingEntity = (SprintEntry) ent;    //Cast to sprinting entry to call appropriate getters.
+
+            sprintingRepetitions.setText(String.valueOf(sprintingEntity.getRepetitions()));
+            sprintingRecovery.setText(String.valueOf(sprintingEntity.getRecovery()));
+        }
+        else
+        {
+            swimmingEntity = (SwimEntry) ent;   //Cast to swimming entry to call appropriate getters.
+
+            swimmingLocation.setText(swimmingEntity.getWhere());
+        }
     }
 
 } // TrainingRecordGUI
