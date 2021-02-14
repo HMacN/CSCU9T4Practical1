@@ -47,6 +47,30 @@ public class TrainingRecord {
 
        return result;
    } // addClass
+
+    //Delete a particular entry
+    public String deleteSpecifiedEntry(String name, String day, String month, String year)
+    {
+        String result = inputChecker.isNameAndDateInputSafe(name, day, month, year);
+
+        if (result.equals(""))   //check input is clean - no errors from input checker
+        {
+            ListIterator<Entry> iter = tr.listIterator();
+            result = "No such entry found.\n";
+
+            while (iter.hasNext())
+            {
+                Entry current = iter.next();
+                if (current.getDay() == Integer.parseInt(day) && current.getMonth() == Integer.parseInt(month) && current.getYear() == Integer.parseInt(year))     //Check if entry matches search terms
+                {
+                    tr.remove(current);
+                    return current.getEntry() + " removed from the training record.\n";
+                }
+            }
+        }
+
+        return result;
+    } // lookupEntry
    
    // look up the entry of a given day and month
    public String lookupEntry (String day, String month, String year)

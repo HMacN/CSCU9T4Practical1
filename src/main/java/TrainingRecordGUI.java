@@ -31,10 +31,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
     private JComboBox typeOfExerciseDropDown = new JComboBox(EnumExerciseType.values());
 
-    private JLabel cyclingSurfaceLabel = new JLabel(" Surface type: ");
+    private JLabel cyclingSurfaceLabel = new JLabel(" Surface Type: ");
     private JTextField cyclingSurfaceType = new JTextField(15);
 
-    private JLabel cyclingRouteLabel = new JLabel(" Route difficulty: ");
+    private JLabel cyclingRouteLabel = new JLabel(" Route Difficulty: ");
     private JTextField cyclingRouteDifficulty = new JTextField(15);
 
     private JLabel sprintingRepsLabel = new JLabel(" Repetitions: ");
@@ -157,6 +157,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
             setUpDisplayForDifferentExerciseTypes();
         }
+        if (event.getSource() == deleteEntryButton)
+        {
+            message = deleteSpecifiedEntry();
+        }
         outputArea.setText(message);
         blankDisplay();
     } // actionPerformed
@@ -186,6 +190,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         this.swimmingLocation.setEnabled(swimmingLocation);
     }
 
+    public String deleteSpecifiedEntry()
+    {
+        return myAthletes.deleteSpecifiedEntry(name.getText(), day.getText(), month.getText(), year.getText());
+    }   //deleteSpecifiedEntry
+
     public String addEntry(String what)
     {
         String message;
@@ -198,6 +207,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         {
             lookUpByDate.setEnabled(true);  //Enable buttons for looking up entries.
             findAllByDate.setEnabled(true);
+            deleteEntryButton.setEnabled(true);
         }
 
         return message;

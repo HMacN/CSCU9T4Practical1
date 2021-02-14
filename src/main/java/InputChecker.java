@@ -2,179 +2,217 @@
 
 public class InputChecker
 {
-    private boolean isNameSafe(String nameToCheck)
+    private String isNameSafe(String nameToCheck)
     {
-        return checkStringIsntEmpty(nameToCheck);
+        String result = "";
+
+        if (!checkStringIsntEmpty(nameToCheck))
+        {
+            result = "Please check that you have put a valid entry in the Name field.\n";
+        }
+
+        return result;
     }//isNameSafe
 
-    private boolean isDaySafe(String dayToCheck)
+    private String isDaySafe(String dayToCheck)
     {
-        return isIntSafe(dayToCheck, 1, 31);
+        String result = "";
+
+        if (!isIntSafe(dayToCheck, 1, 31))
+        {
+            result = "Please check that you have put a valid entry in the Day field.\n";
+        }
+
+        return result;
+    }   //isDaySafe
+
+    private String isMonthSafe(String monthToCheck)
+    {
+        String result = "";
+
+        if (!isIntSafe(monthToCheck, 1, 12))
+        {
+            result = "Please check that you have put a valid entry in the Month field.\n";
+        }
+
+        return result;
     }
 
-    private boolean isMonthSafe(String monthToCheck)
+    private String isYearSafe(String yearToCheck)
     {
-        return isIntSafe(monthToCheck, 1, 12);
+        String result = "";
+
+        if (!isIntSafe(yearToCheck, 1, 99999))
+        {
+            result = "Please check that you have put a valid entry in the Year field.\n";
+        }
+
+        return result;
     }
 
-    private boolean isYearSafe(String yearToCheck)
+    private String isHourSafe(String hourToCheck)
     {
-        return isIntSafe(yearToCheck, 1, 9999);
+        String result = "";
+
+        if (!isIntSafe(hourToCheck, 0, 23))
+        {
+            result = "Please check that you have put a valid entry in the Hour field.\n";
+        }
+
+        return result;
     }
 
-    private boolean isHourSafe(String hourToCheck)
+    private String isMinuteSafe(String minuteToCheck)
     {
-        return isIntSafe(hourToCheck, 0, 23);
+        String result = "";
+
+        if (!isIntSafe(minuteToCheck, 0, 59))
+        {
+            result = "Please check that you have put a valid entry in the Minute field.\n";
+        }
+
+        return result;
     }
 
-    private boolean isMinuteSafe(String minuteToCheck)
+    private String isSecondSafe(String secondToCheck)
     {
-        return isIntSafe(minuteToCheck, 0, 59);
+        String result = "";
+
+        if (!isIntSafe(secondToCheck, 0, 59))
+        {
+            result = "Please check that you have put a valid entry in the Seconds field.\n";
+        }
+
+        return result;
     }
 
-    private boolean isSecondSafe(String secondToCheck)
+    private String isDistanceSafe(String distanceToCheck)
     {
-        return isIntSafe(secondToCheck, 0, 59);
+        String result = "";
+
+        if (!isStringAFloat(distanceToCheck))
+        {
+            result = "Please check that you have put a valid entry in the Distance field.\n";
+        }
+
+        return result;
     }
 
-    private boolean isDistanceSafe(String distanceToCheck) {return isStringAFloat(distanceToCheck); }
-
-    private boolean isCyclingSurfaceTypeSafe(EnumExerciseType exerciseType, String surfaceToCheck)
+    private String isCyclingSurfaceTypeSafe(String surfaceToCheck)
     {
-        if (exerciseType.equals(EnumExerciseType.Cycling))
+        String result = "";
+
+        if (!checkStringIsntEmpty(surfaceToCheck))
         {
-            return checkStringIsntEmpty(surfaceToCheck);
+            result = "Please check that you have put a valid entry in the Surface Type field.\n";
         }
-        else
-        {
-            return true;
-        }
+
+        return result;
     }
 
-    private boolean isCyclingRouteDifficultySafe(EnumExerciseType exerciseType, String routeToCheck)
+    private String isCyclingRouteDifficultySafe(String routeToCheck)
     {
-        if (exerciseType.equals(EnumExerciseType.Cycling))
+        String result = "";
+
+        if (!checkStringIsntEmpty(routeToCheck))
         {
-            return checkStringIsntEmpty(routeToCheck);
+            result = "Please check that you have put a valid entry in the Route Difficulty field.\n";
         }
-        else
-        {
-            return true;
-        }
+
+        return result;
     }
 
-    private boolean isSprintingRepetitionsSafe(EnumExerciseType exerciseType, String repsToCheck)
+    private String isSprintingRepetitionsSafe(String repsToCheck)
     {
-        if (exerciseType.equals(EnumExerciseType.Running))
+        String result = "";
+
+        if (!isIntSafe(repsToCheck, 1, 99999))
         {
-            return checkStringIsntEmpty(repsToCheck);
+            result = "Please check that you have put a valid entry in the Repetitions field.\n";
         }
-        else
-        {
-            return true;
-        }
+
+        return result;
     }
 
-    private boolean isSprintingRecoverySafe(EnumExerciseType exerciseType, String recoveryToCheck)
+    private String isSprintingRecoverySafe(String recoveryToCheck)
     {
-        if (exerciseType.equals(EnumExerciseType.Running))
+        String result = "";
+
+        if (!isIntSafe(recoveryToCheck, 1, 99999))
         {
-            return checkStringIsntEmpty(recoveryToCheck);
+            result = "Please check that you have put a valid entry in the Recovery field.\n";
         }
-        else
-        {
-            return true;
-        }
+
+        return result;
     }
 
-    private boolean isSwimmingLocationSafe(EnumExerciseType exerciseType, String swimmingLocationToCheck)
+    private String isSwimmingLocationSafe(String swimmingLocationToCheck)
     {
-        if (exerciseType.equals(EnumExerciseType.Swimming))
+        String result = "";
+
+        if (!checkStringIsntEmpty(swimmingLocationToCheck))
         {
-            return checkStringIsntEmpty(swimmingLocationToCheck);
+            result = "Please check that you have put a valid entry in the Location field.\n";
         }
-        else
-        {
-            return true;
-        }
+
+        return result;
     }
 
     public String isDateInputSafe(String day, String month, String year)
     {
         String result = "";
 
-        if (!isDaySafe(day))
-        {
-            result += "Please check that you have put a valid number in the Day field.\n";
-        }
+        result += isDaySafe(day);
 
-        if (!isMonthSafe(month))
-        {
-            result += "Please check that you have put a valid number in the Month field.\n";
-        }
+        result += isMonthSafe(month);
 
-        if (!isYearSafe(year))
-        {
-            result += "Please check that you have put a valid number in the Year field.\n";
-        }
+        result += isYearSafe(year);
 
         return result;
     }   //isDateInputSafe
+
+    public String isNameAndDateInputSafe(String name, String day, String month, String year)
+    {
+        String result = "";
+
+        result += isDateInputSafe(day, month, year);
+
+        result += isNameSafe(name);
+
+        return result;
+    }
 
     public String isInputSafe(EnumExerciseType exerciseType, String name, String day, String month, String year, String hours, String minutes, String seconds, String distance, String cyclingSurfaceType, String cyclingRouteDifficulty, String sprintingRepetitions, String sprintingRecovery, String swimmingLocation)
     {
         String result = "";
 
-        if (!isNameSafe(name))
-        {
-            result += "Please check that you have put a valid entry in the day field.\n";
-        }
+        result += isNameSafe(name);
 
         result += isDateInputSafe(day, month, year);
 
-        if (!isHourSafe(hours))
-        {
-            result += "Please check that you have put a valid number in the Hours field.\n";
-        }
+        result += isHourSafe(hours);
 
-        if (!isMinuteSafe(minutes))
-        {
-            result += "Please check that you have put a valid number in the Minutes field.\n";
-        }
+        result += isMinuteSafe(minutes);
 
-        if (!isSecondSafe(seconds))
-        {
-            result += "Please check that you have put a valid number in the Seconds field.\n";
-        }
+        result += isSecondSafe(seconds);
 
-        if (!isDistanceSafe(distance))
-        {
-            result += "Please check that you have put a valid number in the Distance field.\n";
-        }
+        result += isDistanceSafe(distance);
 
-        if (!isCyclingSurfaceTypeSafe(exerciseType, cyclingSurfaceType))
+        if (exerciseType.equals(EnumExerciseType.Cycling))
         {
-            result += "Please check that you have put a valid number in the Surface Type field.\n";
-        }
+            result += isCyclingRouteDifficultySafe(cyclingRouteDifficulty);
 
-        if (!isCyclingRouteDifficultySafe(exerciseType, cyclingRouteDifficulty))
-        {
-            result += "Please check that you have put a valid number in the Route Difficulty field.\n";
+            result += isCyclingSurfaceTypeSafe(cyclingSurfaceType);
         }
-
-        if (!isSprintingRepetitionsSafe(exerciseType, sprintingRepetitions))
+        else if (exerciseType.equals(EnumExerciseType.Running))
         {
-            result += "Please check that you have put a valid number in the Repetitions field.\n";
+            result += isSprintingRepetitionsSafe(sprintingRepetitions);
+
+            result += isSprintingRecoverySafe(sprintingRecovery);
         }
-
-        if (!isSprintingRecoverySafe(exerciseType, sprintingRepetitions))
+        else
         {
-            result += "Please check that you have put a valid number in the Recovery field.\n";
-        }
-
-        if (!isSwimmingLocationSafe(exerciseType, swimmingLocation))
-        {
-            result += "Please check that you have put a valid number in the Location field.\n";
+            result += isSwimmingLocationSafe(swimmingLocation);
         }
 
         return result;
@@ -185,7 +223,7 @@ public class InputChecker
         boolean result;
         int intValue;
 
-        result = isStringAllNumericalDigits(intToCheck);
+        result = isStringAnInt(intToCheck);
 
         if(result)
         {
@@ -200,40 +238,37 @@ public class InputChecker
         return result;
     }//isIntSafe
 
-    private boolean isStringAllNumericalDigits(String isThisAnInt)
+    private boolean isStringAnInt(String isThisAnInt)
     {
         boolean result = checkStringIsntEmpty(isThisAnInt);
 
-        if (result)     //If the given string is not empty, check it is entirely made up of numbers.
+        try
         {
-            for (char c : isThisAnInt.toCharArray()) {
-                if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9') {
-                    result = false;
-                    break;
-                }
-            }
+            float attemptedInt = Integer.parseInt(isThisAnInt);
+        }
+        catch (NumberFormatException numberFormatException)
+        {
+            result = false;
         }
 
         return result;
-    }   //isStringAllNumericalDigits
+    }   //isStringAnInt
 
     private boolean isStringAFloat(String isThisAFloat)
     {
         boolean result = checkStringIsntEmpty(isThisAFloat);
 
-        if (result)     //If the given string is not empty, check it is entirely made up of numbers.
+        try
         {
-            for (char c : isThisAFloat.toCharArray()) {
-                if (c != '0' && c != '1' && c != '2' && c != '3' && c != '4' && c != '5' && c != '6' && c != '7' && c != '8' && c != '9' && c != '.')
-                {
-                    result = false;
-                    break;
-                }
-            }
+            float attemptedFloat = Float.parseFloat(isThisAFloat);
+        }
+        catch (NumberFormatException numberFormatException)
+        {
+            result = false;
         }
 
         return result;
-    }   //isStringAllNumericalDigits
+    }   //isStringAFloat
 
     private boolean checkStringIsntEmpty(String stringToCheck)
     {
