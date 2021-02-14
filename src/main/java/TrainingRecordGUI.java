@@ -58,6 +58,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     public TrainingRecordGUI() {
         super("Training Record");
         setLayout(new FlowLayout());
+        getContentPane().setBackground(Color.BLACK);
+
         add(labn);
         add(name);
         name.setEditable(true);
