@@ -90,7 +90,7 @@ public class InputChecker
     {
         String result = "";
 
-        if (!isStringAFloat(distanceToCheck))
+        if (!isStringAFloat(distanceToCheck) || Float.parseFloat(distanceToCheck) <= 0)
         {
             result = "Please check that you have put a valid entry in the Distance field.\n";
         }

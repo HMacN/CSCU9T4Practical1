@@ -225,8 +225,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
         setSize(720, 200);
         setVisible(true);
-        //outputArea.setForeground(Color.GREEN);
-        //outputArea.setBackground(Color.BLACK);
+
         blankDisplay();
 
         // To save typing in new entries while testing, uncomment
@@ -296,7 +295,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         String message;
         int numberOfEntriesAtStart = myAthletes.getNumberOfEntries();
 
-        System.out.println("Adding "+what+" entry to the records");
+        System.out.println("Adding "+what+" entry to the records.");
         message = myAthletes.addEntry(getExerciseTypeFromDropDown(), name.getText(), day.getText(), month.getText(), year.getText(), hours.getText(), mins.getText(), secs.getText(), dist.getText(), cyclingSurfaceType.getText(), cyclingRouteDifficulty.getText(), sprintingRepetitions.getText(), sprintingRecovery.getText(), swimmingLocation.getText());
 
         if ((numberOfEntriesAtStart != myAthletes.getNumberOfEntries()) && !lookUpByDate.isEnabled())  //Check to see if an entry has actually been added, and if the buttons for looking up entries are disabled.

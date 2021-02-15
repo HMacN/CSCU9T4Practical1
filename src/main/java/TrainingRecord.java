@@ -41,7 +41,7 @@ public class TrainingRecord {
            else
            {
                tr.add(newEntry);
-               result = "Record added\n";
+               result = "Record added.\n";
            }
        }
 
