@@ -61,78 +61,172 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.BLACK);
 
         add(labn);
+        labn.setForeground(Color.GREEN);
+
         add(name);
         name.setEditable(true);
+        name.setBackground(Color.BLACK);
+        name.setForeground(Color.GREEN);
+        name.setCaretColor(Color.GREEN);
 
         add(typeOfExerciseDropDown);
         typeOfExerciseDropDown.setSelectedIndex(0);
         typeOfExerciseDropDown.addActionListener(this);
+        typeOfExerciseDropDown.setBackground(Color.BLACK);
+        typeOfExerciseDropDown.setForeground(Color.GREEN);
 
         add(labd);
+        labd.setForeground(Color.GREEN);
+
         add(day);
         day.setEditable(true);
+        day.setBackground(Color.BLACK);
+        day.setForeground(Color.GREEN);
+        day.setCaretColor(Color.GREEN);
+
         add(labm);
+        labm.setForeground(Color.GREEN);
+
         add(month);
         month.setEditable(true);
+        month.setBackground(Color.BLACK);
+        month.setForeground(Color.GREEN);
+        month.setCaretColor(Color.GREEN);
+
+
         add(laby);
+        laby.setForeground(Color.GREEN);
+
         add(year);
         year.setEditable(true);
+        year.setBackground(Color.BLACK);
+        year.setForeground(Color.GREEN);
+        year.setCaretColor(Color.GREEN);
+
         add(labh);
+        labh.setForeground(Color.GREEN);
+
         add(hours);
         hours.setEditable(true);
+        hours.setBackground(Color.BLACK);
+        hours.setForeground(Color.GREEN);
+        hours.setCaretColor(Color.GREEN);
+
         add(labmm);
+        labmm.setForeground(Color.GREEN);
+
         add(mins);
         mins.setEditable(true);
+        mins.setBackground(Color.BLACK);
+        mins.setForeground(Color.GREEN);
+        mins.setCaretColor(Color.GREEN);
+
         add(labs);
+        labs.setForeground(Color.GREEN);
+
         add(secs);
         secs.setEditable(true);
+        secs.setBackground(Color.BLACK);
+        secs.setForeground(Color.GREEN);
+        secs.setCaretColor(Color.GREEN);
+
         add(labdist);
+        labdist.setForeground(Color.GREEN);
+
         add(dist);
         dist.setEditable(true);
+        dist.setBackground(Color.BLACK);
+        dist.setForeground(Color.GREEN);
+        dist.setCaretColor(Color.GREEN);
+
+
         add(addR);
         addR.addActionListener(this);
+        addR.setBackground(Color.BLACK);
+        addR.setForeground(Color.GREEN);
+        addR.setBorderPainted(true);
 
         add(cyclingSurfaceLabel);
+        cyclingSurfaceLabel.setForeground(Color.GREEN);
+
         add(cyclingSurfaceType);
         cyclingSurfaceType.setEditable(true);
         cyclingSurfaceType.setEnabled(true);
+        cyclingSurfaceType.setBackground(Color.BLACK);
+        cyclingSurfaceType.setForeground(Color.GREEN);
+        cyclingSurfaceType.setCaretColor(Color.GREEN);
 
         add(cyclingRouteLabel);
+        cyclingRouteLabel.setForeground(Color.GREEN);
+
         add(cyclingRouteDifficulty);
         cyclingRouteDifficulty.setEditable(true);
         cyclingRouteDifficulty.setEnabled(true);
+        cyclingRouteDifficulty.setBackground(Color.BLACK);
+        cyclingRouteDifficulty.setForeground(Color.GREEN);
+        cyclingRouteDifficulty.setCaretColor(Color.GREEN);
 
         add(sprintingRepsLabel);
+        sprintingRepsLabel.setForeground(Color.GREEN);
+
         add(sprintingRepetitions);
         sprintingRepetitions.setEditable(true);
         sprintingRepetitions.setEnabled(false);
+        sprintingRepetitions.setBackground(Color.BLACK);
+        sprintingRepetitions.setForeground(Color.GREEN);
+        sprintingRepetitions.setCaretColor(Color.GREEN);
 
         add(sprintingRecoveryLabel);
+        sprintingRecoveryLabel.setForeground(Color.GREEN);
+
         add(sprintingRecovery);
         sprintingRecovery.setEditable(true);
         sprintingRecovery.setEnabled(false);
+        sprintingRecovery.setBackground(Color.BLACK);
+        sprintingRecovery.setForeground(Color.GREEN);
+        sprintingRecovery.setCaretColor(Color.GREEN);
 
         add(swimmingLocationLabel);
+        swimmingLocationLabel.setForeground(Color.GREEN);
+
         add(swimmingLocation);
         swimmingLocation.setEditable(true);
         swimmingLocation.setEnabled(false);
+        swimmingLocation.setBackground(Color.BLACK);
+        swimmingLocation.setForeground(Color.GREEN);
+        swimmingLocation.setCaretColor(Color.GREEN);
 
         add(lookUpByDate);
         lookUpByDate.addActionListener(this);
         lookUpByDate.setEnabled(false);
+        lookUpByDate.setBackground(Color.BLACK);
+        lookUpByDate.setForeground(Color.GREEN);
+        lookUpByDate.setBorderPainted(true);
+
 
         add(findAllByDate);
         findAllByDate.addActionListener(this);
         findAllByDate.setEnabled(false);
+        findAllByDate.setBackground(Color.BLACK);
+        findAllByDate.setForeground(Color.GREEN);
+        findAllByDate.setBorderPainted(true);
 
         add(deleteEntryButton);
         deleteEntryButton.addActionListener(this);
         deleteEntryButton.setEnabled(false);
+        deleteEntryButton.setBackground(Color.BLACK);
+        deleteEntryButton.setForeground(Color.GREEN);
+        deleteEntryButton.setBorderPainted(true);
 
         add(outputArea);
         outputArea.setEditable(false);
+        outputArea.setBackground(Color.BLACK);
+        outputArea.setForeground(Color.GREEN);
+
         setSize(720, 200);
         setVisible(true);
+        //outputArea.setForeground(Color.GREEN);
+        //outputArea.setBackground(Color.BLACK);
         blankDisplay();
 
         // To save typing in new entries while testing, uncomment
